@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "label": "Start Webpack Dev Server",
+      "detail": "webpack serve",
+      "type": "npm",
+      "script": "start",
+      "isBackground": true,
+      "problemMatcher": {
+				"owner": "custom",
+				"pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".",
+					"endsPattern": "."
+				}
+			},
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "Open Chrome with Debug",
+      "dependsOn": "Start Webpack Dev Server",
+      "type": "shell",
+      "command": "start chrome -ArgumentList 'http://localhost:8080 --remote-debugging-port=9222 --auto-open-devtools-for-tabs'",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      }
+    }
+  ]
+}
