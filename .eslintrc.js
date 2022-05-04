@@ -1,3 +1,4 @@
+// Must be CommonJS Module becasue this is used outside of webpack
 module.exports = {
   root: true,
   extends: [
