@@ -1,6 +1,8 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const PACKAGE = require('./package.json');
+const theme = require('./src/theme');
 
 module.exports = {
   mode: 'development',
@@ -16,6 +18,11 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Let\'s Make a Top Ten',
+      author: PACKAGE.author,
+      themeColor: theme.htmlThemeColor,
+      description: PACKAGE.description,
+      version: PACKAGE.version,
+      template: path.join(__dirname, 'src', 'index.ejs'),
     }),
   ],
   module: {
