@@ -6,7 +6,7 @@ const theme = require('./src/theme');
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, 'src', 'index.ts'),
+  entry: path.join(__dirname, 'src', 'index.tsx'),
   devtool: 'inline-source-map',
   devServer: {
     static: {
