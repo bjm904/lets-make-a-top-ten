@@ -14,6 +14,9 @@ module.exports = {
     },
     hot: true,
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({

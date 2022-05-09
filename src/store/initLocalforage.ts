@@ -1,10 +1,10 @@
 import localforage from 'localforage';
 
-const initLocalforage = () => {
+const initLocalforage = (stateVersion: number): void => {
   localforage.config({
     driver: localforage.INDEXEDDB,
     name: 'lets-make-a-top-ten',
-    version: 1.0,
+    version: stateVersion,
   });
 };
 

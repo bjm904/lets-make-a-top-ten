@@ -23,6 +23,7 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
+    "@types/color": "^3.0.3",
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
@@ -45,6 +46,7 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+    "color": "^4.2.3",
     "localforage": "^1.10.0",
     "mobx": "^6.5.0",
     "mobx-react": "^7.4.0",
