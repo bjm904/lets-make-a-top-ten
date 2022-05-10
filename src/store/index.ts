@@ -8,7 +8,6 @@ const stateVersion = 1.0;
 initLocalforage(stateVersion);
 
 const storedState: State | undefined = await localforage.getItem('state') || undefined;
-console.log('got stored state', storedState);
 // There's no error catch for localforage.getItem
 // What about state versions?
 

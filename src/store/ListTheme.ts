@@ -1,11 +1,11 @@
 import Color from 'color';
 
-class CanidateTheme {
+class ListTheme {
   backgroundColor?: string;
 
   textColor?: string;
 
-  constructor(init?:Partial<CanidateTheme>) {
+  constructor(init?:Partial<ListTheme>) {
     Object.assign(this, init);
   }
 
@@ -18,4 +18,4 @@ class CanidateTheme {
   }
 }
 
-export default CanidateTheme;
+export default ListTheme;

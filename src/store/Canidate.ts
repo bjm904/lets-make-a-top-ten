@@ -1,24 +1,12 @@
+import { nanoid } from 'nanoid';
 import CanidateTheme from './CanidateTheme';
 
-interface CanidateConfig {
-  title: string,
-  details?: string,
-  hidden?: boolean,
-  themeOverrides?: CanidateTheme,
-  gif?: ArrayBuffer,
-  clipReference?: {
-    file: string,
-    start: number,
-    stop: number,
-  }
-}
-
 class Canidate {
-  title: string;
+  id = nanoid(10);
+
+  title = 'New Canidate';
 
   details = '';
-
-  hidden = false;
 
   themeOverrides?: CanidateTheme;
 
@@ -30,13 +18,8 @@ class Canidate {
     stop: number,
   };
 
-  constructor(config: CanidateConfig) {
-    this.title = config.title;
-    this.details = config.details || '';
-    this.hidden = Boolean(config.hidden);
-    this.themeOverrides = config.themeOverrides;
-    this.gif = config.gif;
-    this.clipReference = config.clipReference;
+  constructor(init?:Partial<Canidate>) {
+    Object.assign(this, init);
   }
 }
 

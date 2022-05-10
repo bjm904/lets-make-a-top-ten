@@ -15,8 +15,11 @@ interface State {
 class StateStore {
   state: State = defaultState;
 
-  constructor(state: State = defaultState) {
-    this.state = state;
+  constructor(loadState: State = defaultState) {
+    this.state.canidates = loadState.canidates.map((canidateConfig) => (
+      new Canidate(canidateConfig)
+    ));
+
     this.state.ready = true;
 
     makeAutoObservable(this);
