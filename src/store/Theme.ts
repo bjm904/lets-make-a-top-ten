@@ -1,16 +1,16 @@
-import CanidateTheme from './CanidateTheme';
+import CandidateTheme from './CandidateTheme';
 
 interface ThemeConfig {
-  canidate: CanidateTheme,
+  candidate: CandidateTheme,
 }
 
 interface Theme {
-  canidate: CanidateTheme,
+  candidate: CandidateTheme,
 }
 
 class Theme {
   constructor(config: ThemeConfig) {
-    this.canidate = new CanidateTheme(config.canidate);
+    this.candidate = new CandidateTheme(config.candidate);
   }
 }
 

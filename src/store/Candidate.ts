@@ -1,14 +1,14 @@
 import { nanoid } from 'nanoid';
-import CanidateTheme from './CanidateTheme';
+import CandidateTheme from './CandidateTheme';
 
-class Canidate {
+class Candidate {
   id = nanoid(10);
 
-  title = 'New Canidate';
+  title = 'New Candidate';
 
   details = '';
 
-  themeOverrides?: CanidateTheme;
+  themeOverrides?: CandidateTheme;
 
   gif?: ArrayBuffer;
 
@@ -18,9 +18,9 @@ class Canidate {
     stop: number,
   };
 
-  constructor(init?:Partial<Canidate>) {
+  constructor(init?:Partial<Candidate>) {
     Object.assign(this, init);
   }
 }
 
-export default Canidate;
+export default Candidate;

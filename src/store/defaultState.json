@@ -1,6 +1,6 @@
 {
   "ready": false,
-  "canidates": [
+  "candidates": [
     {
       "id": "mXychVGR0K",
       "title": "Timothy J. Berners-Lee",
@@ -31,7 +31,7 @@
     {
       "id": "gAqjJUyG3g",
       "title": "Sample List",
-      "eligibleCanidateIds": [],
+      "eligibleCandidateIds": [],
       "slots": [
         ["mXychVGR0K"],
         ["YBkmzppx8H"],

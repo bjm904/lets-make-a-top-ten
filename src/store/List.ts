@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import Canidate from './Canidate';
+import Candidate from './Candidate';
 import ListTheme from './ListTheme';
 
 const defaultNumberOfSlots = 10;
@@ -10,12 +10,12 @@ class List {
 
   title = 'New List';
 
-  // Empty implies all canidates are eligible
-  eligibleCanidateIds: string[] = [];
+  // Empty implies all candidates are eligible
+  eligibleCandidateIds: string[] = [];
 
-  slots: Canidate['id'][][] = Array(defaultNumberOfSlots).fill(null).map(() => []);
+  slots: Candidate['id'][][] = Array(defaultNumberOfSlots).fill(null).map(() => []);
 
-  mentions: Canidate['id'][][] = Array(defaultNumberOfMentions).fill(null).map(() => []);
+  mentions: Candidate['id'][][] = Array(defaultNumberOfMentions).fill(null).map(() => []);
 
   themeOverrides?: ListTheme;
 

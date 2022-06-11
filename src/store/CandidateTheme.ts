@@ -1,13 +1,13 @@
 import Color from 'color';
 
-class CanidateTheme {
+class CandidateTheme {
   backgroundColor?: Color;
 
   textColor?: Color;
 
-  constructor(init?:Partial<CanidateTheme>) {
+  constructor(init?:Partial<CandidateTheme>) {
     Object.assign(this, init);
   }
 }
 
-export default CanidateTheme;
+export default CandidateTheme;

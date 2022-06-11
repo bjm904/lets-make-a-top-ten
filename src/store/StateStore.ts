@@ -1,11 +1,11 @@
 import { makeAutoObservable } from 'mobx';
-import Canidate from './Canidate';
+import Candidate from './Candidate';
 import List from './List';
 import defaultStateJSON from './defaultState.json';
 
 interface State {
   ready: boolean,
-  canidates: Array<Canidate>,
+  candidates: Array<Candidate>,
   lists: Array<List>,
 }
 
@@ -14,7 +14,7 @@ const defaultStateConfig: State = defaultStateJSON;
 
 const emptyState: State = {
   ready: false,
-  canidates: [],
+  candidates: [],
   lists: [],
 };
 
@@ -32,8 +32,8 @@ class StateStore {
   init(stateConfig: State = defaultStateConfig): void {
     const fullStateConfig = { ...emptyState, ...stateConfig };
 
-    this.state.canidates = fullStateConfig.canidates.map((canidateConfig) => (
-      new Canidate(canidateConfig)
+    this.state.candidates = fullStateConfig.candidates.map((candidateConfig) => (
+      new Candidate(candidateConfig)
     ));
 
     this.state.lists = fullStateConfig.lists.map((listConfig) => (
