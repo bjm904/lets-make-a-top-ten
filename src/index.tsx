@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { when } from 'mobx';
 import App from './App';
-import store from './store';
+import store, { StateContext } from './store';
 
 // I know you'll see this but for the love of god, dont block the initial render
 await when(() => store.state.ready);
@@ -13,7 +13,9 @@ const root = createRoot(window.document.getElementById('root')!);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <StateContext.Provider value={store.state}>
+      <App />
+    </StateContext.Provider>
   </React.StrictMode>,
 );
 

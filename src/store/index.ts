@@ -1,4 +1,5 @@
 import { autorun, toJS } from 'mobx';
+import { createContext } from 'react';
 import localforage from 'localforage';
 import StateStore, { State } from './StateStore';
 import initLocalforage from './initLocalforage';
@@ -22,3 +23,15 @@ autorun(() => {
 });
 
 export default store;
+
+/*
+MobX reccommends using react context for passing state around.
+
+"Using observables directly works very well, but since this typically introduces module state,
+this pattern might complicate unit testing. Instead, we recommend using React Context instead."
+https://mobx.js.org/react-integration.html
+*/
+
+const StateContext = createContext<State>(store.state);
+
+export { StateContext };
