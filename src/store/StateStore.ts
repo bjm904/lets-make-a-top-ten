@@ -1,33 +1,48 @@
 import { makeAutoObservable } from 'mobx';
-import localforage from 'localforage';
 import Canidate from './Canidate';
-
-const defaultState = {
-  ready: false,
-  canidates: [],
-};
+import List from './List';
+import defaultStateJSON from './defaultState.json';
 
 interface State {
   ready: boolean,
   canidates: Array<Canidate>,
+  lists: Array<List>,
 }
 
-class StateStore {
-  state: State = defaultState;
+// TODO: Write test to strictly validate defaultState.json types
+const defaultStateConfig: State = defaultStateJSON;
 
-  constructor(loadState: State = defaultState) {
-    this.state.canidates = loadState.canidates.map((canidateConfig) => (
-      new Canidate(canidateConfig)
-    ));
+const emptyState: State = {
+  ready: false,
+  canidates: [],
+  lists: [],
+};
+
+class StateStore {
+  state: State = emptyState;
+
+  constructor(stateConfig: State = defaultStateConfig) {
+    this.init(stateConfig);
 
     this.state.ready = true;
 
     makeAutoObservable(this);
   }
 
-  addCanidate(canidate: Canidate): void {
-    this.state.canidates.push(canidate);
-    // This whole method is not needed?
+  init(stateConfig: State = defaultStateConfig): void {
+    const fullStateConfig = { ...emptyState, ...stateConfig };
+
+    this.state.canidates = fullStateConfig.canidates.map((canidateConfig) => (
+      new Canidate(canidateConfig)
+    ));
+
+    this.state.lists = fullStateConfig.lists.map((listConfig) => (
+      new List(listConfig)
+    ));
+  }
+
+  resetState(): void {
+    this.init();
   }
 }
 

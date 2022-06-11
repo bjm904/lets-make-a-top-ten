@@ -1,0 +1,53 @@
+{
+  "ready": false,
+  "canidates": [
+    {
+      "id": "mXychVGR0K",
+      "title": "Timothy J. Berners-Lee",
+      "details": "Founder of the internet"
+    },
+    {
+      "id": "YBkmzppx8H",
+      "title": "Alan Turing",
+      "details": "Alan Turing was a brilliant British mathematician who took a leading role in breaking Nazi ciphers during WWII. In his seminal 1936 paper, he proved that there cannot exist any universal algorithmic method of determining truth in mathematics, and that mathematics will always contain undecidable propositions. His work is widely acknowledged as foundational research of computer science and artificial intelligence."
+    },
+    {
+      "id": "CUzNNmUyVD",
+      "title": "John von Neumann",
+      "details": "John Von Neumann was a polymath and pioneer of the application of operator theory to quantum mechanics, in the development of functional analysis. Along with fellow physicists Edward Teller and Stanislaw Ulam, von Neumann worked out key steps in the nuclear physics involving thermonuclear reactions and the hydrogen bomb. "
+    },
+    {
+      "id": "V6ILG34UnW",
+      "title": "Alan Kay",
+      "details": "Known for his work on object-oriented programming languages and graphical user interfaces"
+    },
+    {
+      "id": "88mGWr_W57",
+      "title": "Ada Lovelace",
+      "details": "Often referred to as the world’s first computer programmer. Her work helped lay the groundwork for modern-day programming."
+    }
+  ],
+  "lists": [
+    {
+      "id": "gAqjJUyG3g",
+      "title": "Sample List",
+      "eligibleCanidateIds": [],
+      "slots": [
+        ["mXychVGR0K"],
+        ["YBkmzppx8H"],
+        ["CUzNNmUyVD"],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "mentions": [
+        ["V6ILG34UnW"],
+        []
+      ]
+    }
+  ]
+}
