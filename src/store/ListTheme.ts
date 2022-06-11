@@ -1,20 +1,12 @@
 import Color from 'color';
 
 class ListTheme {
-  backgroundColor?: string;
+  backgroundColor?: Color;
 
-  textColor?: string;
+  textColor?: Color;
 
   constructor(init?:Partial<ListTheme>) {
     Object.assign(this, init);
-  }
-
-  set backgroundColor(newColor: string | Color) {
-    this.backgroundColor = Color(newColor);
-  }
-
-  set textColor(newColor: string | Color) {
-    this.textColor = Color(newColor);
   }
 }
 
