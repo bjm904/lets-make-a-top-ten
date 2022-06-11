@@ -4,6 +4,7 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
+    'plugin:consistent-default-export-name/fixed',
   ],
   plugins: [
     '@typescript-eslint',
@@ -20,6 +21,7 @@ module.exports = {
         'airbnb/hooks',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:consistent-default-export-name/fixed',
       ],
       parserOptions: {
         project: ['./tsconfig.json'],
