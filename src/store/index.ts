@@ -1,8 +1,16 @@
-import { autorun, toJS } from 'mobx';
+import { autorun, configure, toJS } from 'mobx';
 import { createContext } from 'react';
 import localforage from 'localforage';
 import StateStore, { State } from './StateStore';
 import initLocalforage from './initLocalforage';
+
+configure({
+  enforceActions: 'always',
+  computedRequiresReaction: true,
+  reactionRequiresObservable: true,
+  observableRequiresReaction: true,
+  disableErrorBoundaries: true,
+});
 
 const stateVersion = 1.0;
 
