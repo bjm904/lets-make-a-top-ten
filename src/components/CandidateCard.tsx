@@ -1,7 +1,6 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react-lite';
-import { StateContext } from '../store';
 import Candidate from '../store/Candidate';
 
 const propTypes = {
@@ -11,8 +10,6 @@ const propTypes = {
 type CandidateCardProps = PropTypes.InferProps<typeof propTypes>;
 
 const CandidateCard = observer(({ candidate }: CandidateCardProps): ReactElement => {
-  const state = useContext(StateContext);
-
   console.log('candidate render');
   return (
     <div>
@@ -23,8 +20,8 @@ const CandidateCard = observer(({ candidate }: CandidateCardProps): ReactElement
       {candidate.details}
     </div>
   );
-}
+});
 
-CandidateCard.propTypes = propTypes;
+// CandidateCard.propTypes = propTypes;
 
 export default CandidateCard;

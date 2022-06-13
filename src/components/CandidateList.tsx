@@ -6,7 +6,6 @@ import { StateContext } from '../store';
 const CandidateList = observer((): ReactElement => {
   const store = useContext(StateContext);
 
-  console.log('canidiate list render')
   return (
     <div>
       {store.state.candidates.map((candidate, i) => (
