@@ -24,8 +24,6 @@ class StateStore {
   constructor(stateConfig: State = defaultStateConfig) {
     this.init(stateConfig);
 
-    this.state.ready = true;
-
     makeAutoObservable(this);
   }
 
@@ -41,10 +39,18 @@ class StateStore {
     this.state.lists = fullStateConfig.lists.map((listConfig) => (
       new List(listConfig)
     ));
+
+    this.state.ready = true;
   }
 
   resetState(): void {
     this.init();
+  }
+
+  morphIt(): void {
+    // this.state.candidates.push(new Candidate());
+    // this.state.candidates[0] = { ...this.state.candidates[0], details: Date.now().toString() };
+    this.state.candidates[0].details = Date.now().toString();
   }
 }
 
