@@ -9,18 +9,15 @@ const propTypes = {
 
 type CandidateCardProps = PropTypes.InferProps<typeof propTypes>;
 
-const CandidateCard = observer(({ candidate }: CandidateCardProps): ReactElement => {
-  console.log('candidate render');
-  return (
-    <div>
-      <br />
-      <br />
-      {candidate.title}
-      <br />
-      {candidate.details}
-    </div>
-  );
-});
+const CandidateCard = observer(({ candidate }: CandidateCardProps): ReactElement => (
+  <div>
+    <br />
+    <br />
+    {candidate.title}
+    <br />
+    {candidate.details}
+  </div>
+));
 
 // CandidateCard.propTypes = propTypes;
 
