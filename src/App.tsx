@@ -1,21 +1,26 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
+import { observer } from 'mobx-react-lite';
 import CandidateList from './components/CandidateList';
-import store from './store';
+import { StateContext } from './store';
 
-const onClick = (): void => store.init();
-const onClick2 = (): void => {
-  store.state.candidates[0].details = Date.now().toString();
-};
+const App = observer((): ReactElement => {
+  const store = useContext(StateContext);
 
-function App(): ReactElement {
   return (
     <div>
-      Im reacting
-      <input type="button" onClick={onClick} value="Reset State" />
-      <input type="button" onClick={onClick2} value="Morph State" />
-      <CandidateList />
+      {store.state.ready ? (
+        <>
+          <input type="button" onClick={(): void => store.init()} value="Reset State" />
+          <input type="button" onClick={(): void => store.morphIt()} value="Morph State" />
+          <CandidateList />
+        </>
+      ) : (
+        <p>
+          Loading...
+        </p>
+      )}
     </div>
   );
-}
+});
 
 export default App;
