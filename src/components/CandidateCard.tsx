@@ -10,7 +10,7 @@ const propTypes = {
 
 type CandidateCardProps = PropTypes.InferProps<typeof propTypes>;
 
-function CandidateCard({ candidate }: CandidateCardProps): ReactElement {
+const CandidateCard = observer(({ candidate }: CandidateCardProps): ReactElement => {
   const state = useContext(StateContext);
 
   console.log('candidate render');
@@ -27,4 +27,4 @@ function CandidateCard({ candidate }: CandidateCardProps): ReactElement {
 
 CandidateCard.propTypes = propTypes;
 
-export default observer(CandidateCard);
+export default CandidateCard;

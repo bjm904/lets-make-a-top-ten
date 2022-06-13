@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import CandidateCard from './CandidateCard';
 import { StateContext } from '../store';
 
-function CandidateList(): ReactElement {
+const CandidateList = observer((): ReactElement => {
   const state = useContext(StateContext);
 
   console.log('canidiate list render')
@@ -14,6 +14,6 @@ function CandidateList(): ReactElement {
       ))}
     </div>
   );
-}
+});
 
-export default observer(CandidateList);
+export default CandidateList;
