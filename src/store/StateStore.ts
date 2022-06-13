@@ -12,14 +12,14 @@ interface State {
 // TODO: Write test to strictly validate defaultState.json types
 const defaultStateConfig: State = defaultStateJSON;
 
-const emptyState: State = {
+const emptyState = (): State => ({
   ready: false,
   candidates: [],
   lists: [],
-};
+});
 
 class StateStore {
-  state: State = emptyState;
+  state: State = emptyState();
 
   constructor(stateConfig: State = defaultStateConfig) {
     this.init(stateConfig);
@@ -30,11 +30,13 @@ class StateStore {
   }
 
   init(stateConfig: State = defaultStateConfig): void {
-    const fullStateConfig = { ...emptyState, ...stateConfig };
+    Object.assign(this.state, emptyState());
 
-    this.state.candidates = fullStateConfig.candidates.map((candidateConfig) => (
+    const fullStateConfig = { ...emptyState(), ...stateConfig };
+
+    this.state.candidates.push(...fullStateConfig.candidates.map((candidateConfig) => (
       new Candidate(candidateConfig)
-    ));
+    )));
 
     this.state.lists = fullStateConfig.lists.map((listConfig) => (
       new List(listConfig)
