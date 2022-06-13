@@ -4,13 +4,13 @@ import CandidateCard from './CandidateCard';
 import { StateContext } from '../store';
 
 const CandidateList = observer((): ReactElement => {
-  const state = useContext(StateContext);
+  const store = useContext(StateContext);
 
   console.log('canidiate list render')
   return (
     <div>
-      {state.candidates.map((candidate) => (
-        <CandidateCard candidate={candidate} />
+      {store.state.candidates.map((candidate, i) => (
+        <CandidateCard candidate={store.state.candidates[i]} key={candidate.id} />
       ))}
     </div>
   );

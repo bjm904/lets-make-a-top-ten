@@ -40,6 +40,6 @@ this pattern might complicate unit testing. Instead, we recommend using React Co
 https://mobx.js.org/react-integration.html
 */
 
-const StateContext = createContext<State>(store.state);
+const StateContext = createContext(store);
 
 export { StateContext };

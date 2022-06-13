@@ -13,7 +13,7 @@ const root = createRoot(window.document.getElementById('root')!);
 
 root.render(
   <React.StrictMode>
-    <StateContext.Provider value={store.state}>
+    <StateContext.Provider value={store}>
       <App />
     </StateContext.Provider>
   </React.StrictMode>,
