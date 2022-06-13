@@ -1,3 +1,4 @@
+import { makeAutoObservable } from 'mobx';
 import CandidateTheme from './CandidateTheme';
 
 interface ThemeConfig {
@@ -11,6 +12,8 @@ interface Theme {
 class Theme {
   constructor(config: ThemeConfig) {
     this.candidate = new CandidateTheme(config.candidate);
+
+    makeAutoObservable(this);
   }
 }
 

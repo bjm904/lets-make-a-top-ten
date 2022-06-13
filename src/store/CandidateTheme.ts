@@ -1,3 +1,4 @@
+import { makeAutoObservable } from 'mobx';
 import Color from 'color';
 
 class CandidateTheme {
@@ -7,6 +8,8 @@ class CandidateTheme {
 
   constructor(init?:Partial<CandidateTheme>) {
     Object.assign(this, init);
+
+    makeAutoObservable(this);
   }
 }
 

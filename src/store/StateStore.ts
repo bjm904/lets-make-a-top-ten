@@ -34,9 +34,9 @@ class StateStore {
 
     const fullStateConfig = { ...emptyState(), ...stateConfig };
 
-    this.state.candidates.push(...fullStateConfig.candidates.map((candidateConfig) => (
+    this.state.candidates = fullStateConfig.candidates.map((candidateConfig) => (
       new Candidate(candidateConfig)
-    )));
+    ));
 
     this.state.lists = fullStateConfig.lists.map((listConfig) => (
       new List(listConfig)

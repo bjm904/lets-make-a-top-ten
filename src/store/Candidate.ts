@@ -1,3 +1,4 @@
+import { makeAutoObservable } from 'mobx';
 import { nanoid } from 'nanoid';
 import CandidateTheme from './CandidateTheme';
 
@@ -20,6 +21,8 @@ class Candidate {
 
   constructor(init?:Partial<Candidate>) {
     Object.assign(this, init);
+
+    makeAutoObservable(this);
   }
 }
 
