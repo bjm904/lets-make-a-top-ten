@@ -23,8 +23,8 @@ function CandidateCard({ candidate }: CandidateCardProps): ReactElement {
   return (
     <div className={classes.root}>
       <br />
-      {candidate.gif && (
-        <img alt="Candidate" src={candidate.gif} />
+      {candidate.image && (
+        <img alt="Candidate" src={candidate.image} />
       )}
       <br />
       {candidate.title}

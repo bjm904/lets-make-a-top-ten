@@ -30,7 +30,7 @@ const fileChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
 
     const webpDataUrl = canvas.toDataURL('image/webp', 0.80);
 
-    store.editCandidate(store.state.candidates[0], { gif: webpDataUrl });
+    store.editCandidate(store.state.candidates[0], { image: webpDataUrl });
   };
   reader.readAsDataURL(file);
 };
