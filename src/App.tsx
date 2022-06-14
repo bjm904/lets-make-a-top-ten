@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { observer } from 'mobx-react-lite';
 
 import CandidateList from './components/CandidateList';
+import CandidateView from './components/CandidateView';
 import { StateContext } from './store';
 
 const useStyles = createUseStyles({
@@ -20,7 +21,7 @@ function App(): ReactElement {
       {store.state.ready ? (
         <>
           <input type="button" onClick={(): void => store.init()} value="Reset State" />
-          <input type="button" onClick={(): void => store.morphIt()} value="Morph State" />
+          <CandidateView />
           <CandidateList />
         </>
       ) : (
