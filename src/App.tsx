@@ -4,6 +4,7 @@ import { observer } from 'mobx-react-lite';
 
 import CandidateList from './components/CandidateList';
 import CandidateView from './components/CandidateView';
+import ListSidebar from './components/ListSidebar';
 import { StateContext } from './store';
 
 const useStyles = createUseStyles({
@@ -20,7 +21,7 @@ function App(): ReactElement {
     <div className={classes.root}>
       {store.state.ready ? (
         <>
-          <input type="button" onClick={(): void => store.init()} value="Reset State" />
+          <ListSidebar />
           <CandidateView />
           <CandidateList />
         </>
