@@ -12,7 +12,7 @@ class Candidate {
 
   themeOverrides?: CandidateTheme;
 
-  gif?: ArrayBuffer;
+  gif?: string;
 
   clipReference?: {
     file: string,
