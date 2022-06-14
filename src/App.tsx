@@ -1,5 +1,6 @@
 import React, { ReactElement, useContext } from 'react';
 import { observer } from 'mobx-react-lite';
+
 import CandidateList from './components/CandidateList';
 import { StateContext } from './store';
 

@@ -13,6 +13,7 @@ module.exports = {
   ],
   rules: {
     'no-underscore-dangle': 'off',
+    'sort-imports': ['error', { allowSeparatedGroups: true, ignoreCase: true }],
   },
   overrides: [
     {
@@ -30,8 +31,9 @@ module.exports = {
         project: ['./tsconfig.json'],
       },
       rules: {
-        '@typescript-eslint/explicit-function-return-type': 'error',
         'no-underscore-dangle': 'off',
+        'sort-imports': ['error', { allowSeparatedGroups: true, ignoreCase: true }],
+        '@typescript-eslint/explicit-function-return-type': 'error',
         'mobx/no-anonymous-observer': 'off',
         'react/jsx-key': 'error',
       },

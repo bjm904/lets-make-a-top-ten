@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx';
+
 import CandidateTheme from './CandidateTheme';
 
 interface ThemeConfig {

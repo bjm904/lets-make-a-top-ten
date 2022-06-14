@@ -1,7 +1,8 @@
 import { makeAutoObservable } from 'mobx';
+
 import Candidate from './Candidate';
-import List from './List';
 import defaultStateJSON from './defaultState.json';
+import List from './List';
 
 interface State {
   ready: boolean,

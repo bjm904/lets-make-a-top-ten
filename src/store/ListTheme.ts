@@ -1,5 +1,5 @@
-import { makeAutoObservable } from 'mobx';
 import Color from 'color';
+import { makeAutoObservable } from 'mobx';
 
 class ListTheme {
   backgroundColor?: Color;

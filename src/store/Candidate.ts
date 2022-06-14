@@ -1,5 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { nanoid } from 'nanoid';
+
 import CandidateTheme from './CandidateTheme';
 
 class Candidate {

@@ -1,6 +1,7 @@
 import { autorun, configure, toJS } from 'mobx';
 import { createContext } from 'react';
 import localforage from 'localforage';
+
 import StateStore, { State } from './StateStore';
 import initLocalforage from './initLocalforage';
 

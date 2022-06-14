@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
-import PropTypes from 'prop-types';
 import { observer } from 'mobx-react-lite';
+import PropTypes from 'prop-types';
+
 import Candidate from '../store/Candidate';
 
 const propTypes = {
