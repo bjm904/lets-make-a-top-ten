@@ -37,6 +37,7 @@ module.exports = {
         'mobx/no-anonymous-observer': 'off',
         'mobx/missing-observer': 'off',
         'react/jsx-key': 'error',
+        'padding-line-between-statements': ['error', { blankLine: 'always', prev: '*', next: 'return' }],
       },
     },
   ],

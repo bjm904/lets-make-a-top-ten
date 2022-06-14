@@ -19,6 +19,7 @@ type CandidateCardProps = PropTypes.InferProps<typeof propTypes>;
 
 function CandidateCard({ candidate }: CandidateCardProps): ReactElement {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <br />
