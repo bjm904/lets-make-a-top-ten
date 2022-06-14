@@ -23,6 +23,9 @@ function CandidateCard({ candidate }: CandidateCardProps): ReactElement {
   return (
     <div className={classes.root}>
       <br />
+      {candidate.gif && (
+        <img alt="Candidate" src={candidate.gif} />
+      )}
       <br />
       {candidate.title}
       <br />
