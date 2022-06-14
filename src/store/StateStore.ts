@@ -59,6 +59,14 @@ class StateStore {
     // this.state.candidates[0] = { ...this.state.candidates[0], details: Date.now().toString() };
     this.state.candidates[0].details = Date.now().toString();
   }
+
+  editCandidate(targetCandidate: Candidate, props: Partial<Candidate>): void {
+    const candidate = this.state.candidates.find((c) => c === targetCandidate);
+
+    if (candidate) {
+      Object.assign(candidate, { ...props });
+    }
+  }
 }
 
 export type { State };
