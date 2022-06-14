@@ -8,6 +8,7 @@ interface State {
   ready: boolean,
   candidates: Array<Candidate>,
   lists: Array<List>,
+  activeListIndex: number,
 }
 
 // TODO: Write test to strictly validate defaultState.json types
@@ -17,6 +18,7 @@ const emptyState = (): State => ({
   ready: false,
   candidates: [],
   lists: [],
+  activeListIndex: 0,
 });
 
 class StateStore {
@@ -26,6 +28,10 @@ class StateStore {
     this.init(stateConfig);
 
     makeAutoObservable(this);
+  }
+
+  get activeList(): List {
+    return this.state.lists[this.state.activeListIndex];
   }
 
   init(stateConfig: State = defaultStateConfig): void {
