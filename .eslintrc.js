@@ -35,6 +35,7 @@ module.exports = {
         'sort-imports': ['error', { allowSeparatedGroups: true, ignoreCase: true }],
         '@typescript-eslint/explicit-function-return-type': 'error',
         'mobx/no-anonymous-observer': 'off',
+        'mobx/missing-observer': 'off',
         'react/jsx-key': 'error',
       },
     },
