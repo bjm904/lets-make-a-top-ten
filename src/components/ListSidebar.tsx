@@ -2,6 +2,7 @@ import React, { ReactElement, useContext } from 'react';
 import { createUseStyles } from 'react-jss';
 import { observer } from 'mobx-react-lite';
 
+import FileLoaderPlayground from './FileLoaderPlayground';
 import ListSidebarRow from './ListSidebarRow';
 import { StateContext } from '../store';
 
@@ -20,10 +21,7 @@ function ListSidebar(): ReactElement {
 
   return (
     <div className={classes.root}>
-      <div>
-        <input type="button" onClick={(): void => store.init()} value="Reset State" />
-        <input type="button" onClick={(): void => store.morphIt()} value="Morph State" />
-      </div>
+      <FileLoaderPlayground />
 
       {store.activeList.slots.map((slot, i) => (
         <ListSidebarRow
