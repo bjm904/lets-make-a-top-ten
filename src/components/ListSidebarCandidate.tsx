@@ -34,7 +34,6 @@ function ListSidebarCandidate({ candidateId }: ListSidebarCandidateProps): React
   return (
     <div className={classes.root}>
       {candidate.title}
-      {candidate.details}
     </div>
   );
 }
