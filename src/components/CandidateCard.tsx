@@ -22,13 +22,7 @@ function CandidateCard({ candidate }: CandidateCardProps): ReactElement {
 
   return (
     <div className={classes.root}>
-      <br />
-      {candidate.image && (
-        <img alt="Candidate" src={candidate.image} />
-      )}
-      <br />
       {candidate.title}
-      <br />
       {candidate.details}
     </div>
   );
