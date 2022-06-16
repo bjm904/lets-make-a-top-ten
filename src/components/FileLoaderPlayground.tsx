@@ -17,19 +17,39 @@ const fileChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
       return;
     }
 
+    // Load image
     const img = new Image();
     img.src = contents;
     await img.decode();
 
-    // const iData = new ImageData(new Uint8ClampedArray(), img.naturalWidth, img.naturalHeight);
     const canvas = document.createElement('canvas');
-    canvas.width = img.naturalWidth;
-    canvas.height = img.naturalHeight;
+    canvas.width = 200;
+    canvas.height = 200;
+
+    // Find image size to fix on canvas and maintain aspect ratio
+    let ratioAspect = 1;
+    const ratioWidth = img.naturalWidth / canvas.width;
+    const ratioHeight = img.naturalHeight / canvas.height;
+    if (ratioWidth > 1) {
+      ratioAspect = ratioWidth;
+    } else if (ratioHeight > 1) {
+      ratioAspect = ratioHeight;
+    }
+
+    const newWidth = img.naturalWidth / ratioAspect;
+    const newHeight = img.naturalHeight / ratioAspect;
+    const offsetX = (canvas.width * 0.5) - (newWidth * 0.5);
+    const offsetY = (canvas.height * 0.5) - (newHeight * 0.5);
+
+    // Draw image to canvas
     const ctx = canvas.getContext('2d');
-    ctx?.drawImage(img, 0, 0);
+    ctx?.drawImage(img, offsetX, offsetY, newWidth, newHeight);
 
+    // Export canvas as webp dataURL
     const webpDataUrl = canvas.toDataURL('image/webp', 0.80);
+    console.log('Image DataURL', webpDataUrl);
 
+    // Update Candidate image
     store.editCandidate(store.state.candidates[0], { image: webpDataUrl });
   };
   reader.readAsDataURL(file);
