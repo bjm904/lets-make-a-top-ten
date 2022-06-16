@@ -8,10 +8,27 @@ import { StateContext } from '../store';
 
 const useStyles = createUseStyles({
   root: {
+    height: '100%',
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 'auto',
     display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
   },
   slotIdentifier: {
+    flexGrow: 0,
+    flexShrink: 1,
+    flexBasis: 'auto',
     fontSize: 'large',
+  },
+  candidatesContainer: {
+    height: '100%',
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 'auto',
+    display: 'flex',
   },
 });
 
@@ -43,9 +60,11 @@ function ListSidebarRow({ slotType, slotIndex }: ListSidebarRowProps): ReactElem
           HM
         </div>
       )}
-      {slotCandidates.map((candidateId) => (
-        <ListSidebarCandidate candidateId={candidateId} key={candidateId} />
-      ))}
+      <div className={classes.candidatesContainer}>
+        {slotCandidates.map((candidateId) => (
+          <ListSidebarCandidate candidateId={candidateId} key={candidateId} />
+        ))}
+      </div>
     </div>
   );
 }

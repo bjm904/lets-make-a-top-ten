@@ -9,7 +9,17 @@ import { StateContext } from './store';
 
 const useStyles = createUseStyles({
   root: {
+    height: '100%',
     display: 'flex',
+    overflow: 'hidden',
+  },
+  main: {
+    height: '100%',
+    flexGrow: 4,
+    flexShrink: 1,
+    flexBasis: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
   },
 });
 
@@ -22,8 +32,10 @@ function App(): ReactElement {
       {store.state.ready ? (
         <>
           <ListSidebar />
-          <CandidateView />
-          <CandidateList />
+          <div className={classes.main}>
+            <CandidateView />
+            <CandidateList />
+          </div>
         </>
       ) : (
         <p>

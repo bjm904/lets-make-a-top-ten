@@ -7,7 +7,27 @@ import { StateContext } from '../store';
 
 const useStyles = createUseStyles({
   root: {
+    height: '100%',
+    flexGrow: 1,
+    flexShrink: 1,
     display: 'flex',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    height: '100%',
+    flexGrow: 0,
+    flexShrink: 0,
+    border: '1px solid black',
+  },
+  image: {
+    width: '100%',
+    maxHeight: '100%',
+    objectFit: 'contain',
+  },
+  candidateTitle: {
+    flexGrow: 1,
+    flexShrink: 1,
+    textAlign: 'center',
   },
 });
 
@@ -33,7 +53,14 @@ function ListSidebarCandidate({ candidateId }: ListSidebarCandidateProps): React
 
   return (
     <div className={classes.root}>
-      {candidate.title}
+      <div className={classes.imageContainer}>
+        {candidate?.image && (
+          <img alt="Candidate" className={classes.image} src={candidate?.image} />
+        )}
+      </div>
+      <div className={classes.candidateTitle}>
+        {candidate.title}
+      </div>
     </div>
   );
 }

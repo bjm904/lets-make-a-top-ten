@@ -8,10 +8,11 @@ import { StateContext } from '../store';
 
 const useStyles = createUseStyles({
   root: {
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    flexGrow: 0,
-    flexShrink: 1,
   },
 });
 
